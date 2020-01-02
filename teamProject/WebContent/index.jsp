@@ -19,7 +19,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="relative bgded" style="background-image:url('/images/demo/backgrounds/01.png');"> 
+<div class="relative bgded" style="background-color: #333"> 
   <!-- ################################################################################################ -->
  		<!-- 헤더영역 -->
 
