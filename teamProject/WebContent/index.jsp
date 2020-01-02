@@ -42,8 +42,8 @@ Licence URI: https://www.os-templates.com/template-terms
       </div>
       <div class="fl_right">
       	<ul class="faico clear">
-      	  <li>로그인 |</li>
-      	  <li>회원가입</li>
+      	  <li><a>로그인 |</a></li>
+      	  <li><a>회원가입</a></li>
       	</ul>
       </div>
       <div class="fl_right">
