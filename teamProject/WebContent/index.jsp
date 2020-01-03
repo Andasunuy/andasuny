@@ -10,7 +10,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <html>
 
 <head>
-<title>가구 하하하gk</title>
+<title>가구 가가가가가</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -43,8 +43,8 @@ Licence URI: https://www.os-templates.com/template-terms
       </div>
       <div class="fl_right">
       	<ul class="faico clear">
-      	  <li>로그인 |</li>
-      	  <li>회원가입</li>
+      	  <li><a href="/teamProject/member/login.jsp">로그인 |</a></li>
+      	  <li><a href="/teamProject/member/joinmember.jsp">회원가입</a></li>
       	</ul>
       </div>
       <div class="fl_right">
