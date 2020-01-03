@@ -9,7 +9,7 @@ Licence URI: https://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>가구 수정할게</title>
+<title>가구 테스트수정본</title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
