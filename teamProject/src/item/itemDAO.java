@@ -37,12 +37,7 @@ public class itemDAO {
 	
 	
 	public void addOrder(){ //주문등록(구매자가 결제 정보를 등록하는 단계)
-	//gggggg
-		try {
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
 		
 	}//addOrder()메소드 끝
 	
