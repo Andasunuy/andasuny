@@ -9,7 +9,8 @@ Licence URI: https://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>가구 견적 사이트</title>
+<title>가구 테스트수정본</title>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -42,8 +43,8 @@ Licence URI: https://www.os-templates.com/template-terms
       </div>
       <div class="fl_right">
       	<ul class="faico clear">
-      	  <li><a>로그인 |</a></li>
-      	  <li><a>회원가입</a></li>
+      	  <li>로그인 |</li>
+      	  <li>회원가입</li>
       	</ul>
       </div>
       <div class="fl_right">
