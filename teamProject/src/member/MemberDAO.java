@@ -10,7 +10,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class MemberDAO {
-	//gkgkgkgkgkgkgkg
+	
 	//커넥션풀 얻는 메소드
 	private Connection getConnection() throws Exception{
 		Connection conn=null;
