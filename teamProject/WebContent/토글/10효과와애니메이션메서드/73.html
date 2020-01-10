@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!--
+		효과 메서드
+		
+		hide()
+			- 노출되어 있는 요소를 숨기는 효과를 하는 메서드
+			- 기본구문
+				$(요소선택).hide("효과속도", 콜백함수);
+				= 선택한 요소를 효과속도에 맞춰 숨긴 후 콜백 함수의 실행문을 실행한다.
+		
+		show()
+			- 숨겨져 있던 요소를 다시 노출시키는 메서드
+			- 기본구문
+				$(요소선택).show("효과속도", 콜백함수);
+				= 선택한 요소가 숨겨져 있을 경우 효과속도에 맞춰 노출시키고 콜백 함수 실행문을 실행한다.
+				
+		toggle()
+			- 숨겨져 있던 요소는 노출시키고, 노출되어있던 요소는 숨기는 hide()와 show() 두 역할을 모두 하는 메서드
+			
+		※ 참고
+			- 효과속도 : 숨기거나 노출시킬 때 바뀌는 속도, 속도값으로 "fast", "normal", "slow" 또는 1/1000초=ms 단위로 입력 가능
+			- 콜백함수 : 효과가 모두 완료되면 실행되는 함수를 뜻함. 생략가능
+			
+			
+		예제주제 :	hide 버튼을 클릭했을 때 효과 메서드를 이용하여 <h1> 태그 영역을 숨기고,
+				show 버튼을 눌렀을 때 효과 메서드를 이용하여 <h1> 태그 영역을 다시 노출되게 한다.
+	-->
+	<script src="js/jquery-1.10.2.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			//hide 버튼을 클릭했을 때
+			$("#btn1").on("click",function(){
+				//1초 만에 <h1> 태그를 숨기고, 숨김이 완료되면 콜백함수의 alert() 메서드가 실행되게 선언
+				$("h1").hide(1000,function(){
+					alert("숨김완료");
+				});
+			});
+			//show 버튼을 클릭했을 때
+			$("#btn2").click(function(){
+				//1초 만에 <h1> 태그를 노출시키고, 숨김이 완료되면 콜백함수 실행되게 선언
+				$("h1").show(1000,function(){
+					alert("노출완료");
+				});
+			});
+			
+			$("#btn3").click(function(){
+				//1초 만에 <h1> 태그를 노출시키고, 숨김이 완료되면 콜백함수 실행되게 선언
+				$("h1").toggle("fast");
+			});
+		});
+		
+		
+	
+	</script>
+</head>
+
+<body>
+	<button id="btn1">hide</button>
+	<button id="btn2">show</button>
+	<button id="btn3">toggle</button>
+	<h1>내용</h1>
+</body>
+</html>

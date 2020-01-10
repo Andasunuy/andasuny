@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!--
+		효과 메서드
+		
+		fadeOut()
+			- 노출되어 있던 요소가 점점 투명해지면서 숨겨지는 효과를 내는 메서드
+			- 기본구문
+				$(요소선택).fadeOut("효과속도", 콜백함수);
+
+		fadeIn()
+			- 숨겨져 있던 요소가 점점 선명해 지면서 노출되는 효과를 내는 메서드
+			- 기본구문
+				$(요소선택).fadeIn("효과속도", 콜백함수);
+				
+		fadeToggle()
+			- 노출되어 있던 요소는 점점 투명해지면서 사라지고, 숨겨져있던 요소는 점점 선명해지면서 노출되게 하는 메서드
+			
+		※ 참고
+			- 효과속도 : 숨기거나 노출시킬 때 바뀌는 속도, 속도값으로 "fast", "normal", "slow" 또는 1/1000초=ms 단위로 입력 가능
+			- 콜백함수 : 효과가 모두 완료되면 실행되는 함수를 뜻함. 생략가능
+	-->
+	<script src="js/jquery-1.10.2.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			//fadeout 버튼을 클릭했을 때
+			$("#btn1").on("click",function(){
+				//<h1>태그가 1초만에 투명해지면서 숨겨진다
+				$("h1").fadeOut(1000);
+			});
+			//fadein 버튼을 클릭했을 때
+			$("#btn2").click(function(){
+				//<h1>태그가 천천히 선명해지면서 노출된다
+				$("h1").fadeIn("slow");
+			});
+			//fadetoggle 버튼을 클릭했을 때
+			$("#btn3").click(function(){
+				//<h1>태그가 빠르게 투명해지며 숨겨졌다가 빠르게 선명해지면서 노출되는 것을 반복한다
+				$("h1").fadeToggle("fast");
+			});
+		});
+		
+		
+	
+	</script>
+</head>
+
+<body>
+	<button id="btn1">fadeOut</button>
+	<button id="btn2">fadeIn</button>
+	<button id="btn3">fadeToggle</button>
+	<h1>내용</h1>
+</body>
+</html>
