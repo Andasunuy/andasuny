@@ -1,12 +1,16 @@
 package member;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import net.member.action.ActionForward;
 
 /*
  * 메모: 2020/1/2 -윤석현
@@ -62,7 +66,66 @@ public class MemberControl extends HttpServlet {
 			}
 			*/
 		}//이 뒤에다가 else if문으로 추가하세요
-		
+		else if(path.equals("member.do")){
+			String memberId=request.getParameter("id");
+			String memberPw=request.getParameter("pw");
+			System.out.println(memberId);
+			System.out.println("****");
+			
+			MemberDAO mdao=new MemberDAO();
+			
+			boolean check=mdao.login(memberId, memberPw);
+			
+			System.out.println(check);
+			// check==0  : 비밀번호가 틀렸을 경우
+			if(check==0){
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out=response.getWriter();
+				out.println("<script>");
+				out.println("alert('로그인에 실패하였습니다. \\n 비밀번호를 확인해주세요');");
+				out.println("location.href='member.do';");
+				out.println("</script>");
+				out.close();
+				return;
+			
+			// check==-1 : 아이디가 틀렸을 경우
+			}else if(check==-1){
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out=response.getWriter();
+				out.println("<script>");
+				out.println("alert('로그인에 실패하였습니다. \\n 아이디를 확인해주세요');");
+				out.println("location.href='member.do';");
+				out.println("</script>");
+				out.close();
+				return;	
+			}
+			//로그인 성공
+			HttpSession session=request.getSession();
+			String id = mdao.id(memberId);
+			
+			
+			session.setAttribute("id", memberId);
+			//session.setAttribute("nickName", nickName);
+
+			ActionForward forward=new ActionForward();
+			
+			
+			//true sendRedirect()
+			forward.setRedirect(true);
+			forward.setPath("./"); 
+
+			return forward;
+		}
+		else if(path.equals("member.do")){
+			HttpSession session = request.getSession();
+			session.invalidate();
+			
+			ActionForward forward = new ActionForward();
+			forward.setRedirect(true);
+			forward.setPath("./index.do");
+
+			return forward;
+		}
 	}
 	
 }
