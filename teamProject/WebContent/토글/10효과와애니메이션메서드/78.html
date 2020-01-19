@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!--
+		효과 제어 메서드
+		
+		stop()
+			- 현재 실행 중인 효과를 모두 정지 시킨다.
+			- 예를 들어, 오른쪽으로 이동 중인 요소에 버튼을 강제로 눌러 정지시킬 수 있다.
+			- 기본구문
+				$(요소선택).stop();
+				= 선택한 요소에 동작 중인 효과 또는 애니메이션을 강제로 모두 정지 시킨다.
+		delay()
+			- 선택한 요소에 효과 또는 애니메이션이 실행될 때 시작되는 시간을 지연시킨다.
+			- 기본구문
+				$(요소선택).delay(지연시간).애니메이션 또는 효과메소드
+				= 해석 : 선택한 요소에 효과 또는 애니메이션의 실행 시작 시간을 지연 시킨다.
+	-->
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<style type="text/css">
+		h1{
+			width: 50px;
+			height: 30px;
+			background-color: red;
+			font-size: 100%;
+		}
+		h2{
+			width: 50px;
+			height: 30px;
+			background-color: orange;
+			font-size: 100%;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			//<h1> 태그에 animate() 메서드 적용 : marginLeft 속성을 이용해 <h1> 태그 영역의 바깥 왼쪽 여백을
+			//250px만큼 띄우면서 오른쪽으로 이동되는 동작 효과를 준다.
+			$("h1").animate({marginLeft:"250px"},3000);
+			//<h1> 태그와 같은 animate() 메서드를 적용하지만 delay() 메서드를 사용해 1초 이후 애니메이션이 실행되게 한다.
+			$("h2").delay(1000).animate({marginLeft:"250px"},3000);
+			//STOP 버튼을 눌러 <h1> 태그 애니메이션이 정지되게한다.
+			$("#stopBtn").click(function(){
+				$("h1").stop();
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<button id="stopBtn">STOP</button>
+	<h1>내용</h1>
+	<h2>내용</h2>
+</body>
+</html>

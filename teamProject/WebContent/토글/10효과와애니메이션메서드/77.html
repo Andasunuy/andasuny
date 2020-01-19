@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!--
+		효과 메서드
+		
+		animate()
+			- 선택한 요소에 애니메이션을 적용한다.
+			- 선택한 요소에 다양한 동적 효과를 적용한다. 가령, 요소를 앞으로 이동시키는 동적 효과를 주거나,
+			점차 커지게 하는 효과를 주거나 하는 다양한 동적효과를 줄 수 있는 메서드
+			- 기본구문
+				$(요소선택).animate({애니메이션 관련 속성},"효과속도",콜백함수);
+				= {애니메이션 관련 속성}에는 모션(동작)으로 적용할 속성을 CSS 이용해 입력한다.
+				효과속도는 동작 동작속도를 뜻하고, 값으로는 "fast","slow","normal" 또는 1/1000 단위의 ms
+				콜백함수는 동작이 성공적으로 완료되면 실행되는 함수
+	-->
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<style type="text/css">
+		h1{
+			width: 50px;
+			height: 30px;
+			background-color: red;
+			font-size: 100%;
+		}
+		h2{
+			width: 50px;
+			height: 30px;
+			background-color: orange;
+			font-size: 100%;
+		}
+		h3{
+			width: 50px;
+			height: 30px;
+			background-color:  silver;
+			font-size: 100%;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		$(function(){
+			/*
+			<h1>태그를 선택해서 가져와서 animate()메서드를 적용하자
+				애니메이션 관련 속성으로 marginLeft를 이용해 <h1>태그의 왼쪽 바깥 여백을 5초만에 띄어주면서 오른쪽으로 동작하는 효과를 줌
+			*/
+			$("h1").animate({marginLeft:"250px"},5000,function(){
+				alert("도착 완료");
+			});
+			/*
+				<h2>태그를 선택해서 가져와서 animate()메서드를 적용하자
+					marginLeft 속성에 250px를 값으로 주어 5초 만에 왼쪽 바깥 여백을 띄어주면서 오른쪽으로 동작하는 효과를 주고
+					<h2> 태그 영역의 투명도가 30%만큼 나타나게 하고, 너비는 100px 크기로 커지게 하였다.
+			*/
+			$("h2").animate(
+					{marginLeft:"250px",width:"100px",opacity:0.3},5000
+					);
+					
+			/*
+				<h2>태그를 선택해서 가져와서 animate()메서드를 적용하자
+					바깥 왼쪽 여백을 250px만큼 주어 오른쪽으로 3초만에 이동시키는 동작 효과를 주었고,
+					또한, 바깥 왼쪽 여백을 0만큼 주어 왼쪽으로 2초만에 이동시키는 동작 효과를 주었다.
+			*/
+			$("h3").animate(
+						{marginLeft:"250px"},3000
+					)
+					.animate(
+						{marginTop:"100px"},2000
+					)
+					.animate(
+						{marginLeft:"250px"},1000
+					)
+		});
+	</script>
+</head>
+
+<body>
+	<h1>내용</h1>
+	<h2>내용</h2>
+	<h3>내용</h3>
+</body>
+</html>
